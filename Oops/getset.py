@@ -1,0 +1,19 @@
+class MyClass:
+  def __init__(self, value):
+      self._value = value
+    
+  def show(self):
+    print(f"Value is {self._value}")
+    
+  @property                     # GETTER
+  def ten_value(self):
+      return 10* self._value
+    
+  @ten_value.setter             # SETTER
+  def ten_value(self, new_value):
+      self._value = new_value/10
+
+obj = MyClass(10)
+# obj.ten_value = 67      # here, we are able to set value using Setter 
+print(obj.ten_value)
+obj.show()

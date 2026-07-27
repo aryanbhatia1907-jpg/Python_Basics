@@ -1,0 +1,24 @@
+class Employee:
+    def __init__(self, name):
+        self.name=name
+
+    def show(self):
+        print(f"The name is {self.name}")
+
+class Dancer:
+    def __init__(self, dance):
+        self.dance=dance
+
+    def show(self):
+        print(f"The Dance is {self.dance}")
+
+class DancerEmployee(Employee, Dancer):             # Yahan pe jis order pe Class likha hoga ussi order mein "show" method chalega 
+    def __init__(self, dance,name):
+        self.dance=dance
+        self.name=name
+
+o=DancerEmployee("Kathak","Shivani")
+print(o.name)
+print(o.dance)
+o.show()
+print(DancerEmployee.mro())                         # 'Method Resolution Order' - Method ke order batayega ki kahan dhundha jayega class ko {Agar Class DancerEmployee ka order agar change hoga toh "mro" bi change hoga} 
